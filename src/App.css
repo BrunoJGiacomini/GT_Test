@@ -1,0 +1,271 @@
+:root {
+  font-family:
+    Inter,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+  color: #1f2937;
+  background: #f4f7f4;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+.app {
+  min-height: 100vh;
+}
+
+.app-header {
+  min-height: 88px;
+  padding: 18px 5%;
+  background: #173d2b;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.brand-icon {
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  background: #2b6042;
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: 21px;
+  letter-spacing: -0.5px;
+}
+
+.app-header p {
+  margin: 5px 0 0;
+  color: #d0e2d5;
+  font-size: 13px;
+}
+
+.header-badge {
+  padding: 7px 12px;
+  border: 1px solid #63856e;
+  border-radius: 999px;
+  color: #e1f3e5;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.dashboard {
+  width: min(1440px, 92%);
+  margin: 0 auto;
+  padding: 34px 0 48px;
+}
+
+.welcome {
+  margin-bottom: 24px;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  color: #398052;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.welcome h2 {
+  margin: 0;
+  color: #173d2b;
+  font-size: clamp(25px, 3vw, 32px);
+  letter-spacing: -0.8px;
+}
+
+.welcome-description {
+  margin: 9px 0 0;
+  color: #68766c;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.panel {
+  margin-bottom: 26px;
+  padding: 24px;
+  background: #ffffff;
+  border: 1px solid #e4ebe5;
+  border-radius: 16px;
+  box-shadow: 0 4px 18px rgb(24 60 38 / 4%);
+}
+
+.panel-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.panel-heading h2 {
+  margin: 0;
+  color: #203b2b;
+  font-size: 19px;
+}
+
+.panel-heading p {
+  margin: 6px 0 0;
+  color: #7b867d;
+  font-size: 13px;
+}
+
+.section-icon {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  background: #edf6ef;
+  color: #267344;
+  font-size: 27px;
+}
+
+.map-container {
+  overflow: hidden;
+  height: 480px;
+  border: 1px solid #e1e8e2;
+  border-radius: 12px;
+  background: #edf1ed;
+}
+
+.leaflet-map {
+  width: 100%;
+  height: 100%;
+}
+
+.map-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-top: 16px;
+}
+
+.legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: #58665c;
+  font-size: 12px;
+}
+
+.legend-dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 3px;
+}
+
+.park-dot {
+  background: #22a05a;
+}
+
+.square-dot {
+  background: #84cc16;
+}
+
+.feedback {
+  margin: 0 0 16px;
+  color: #56665a;
+  font-size: 14px;
+}
+
+.feedback.error {
+  color: #b42318;
+}
+
+.app-footer {
+  padding: 22px 5%;
+  border-top: 1px solid #e2e9e3;
+  color: #78847a;
+  text-align: center;
+  font-size: 12px;
+}
+
+@media (max-width: 640px) {
+  .app-header {
+    padding: 16px 4%;
+  }
+
+  .app-header h1 {
+    font-size: 18px;
+  }
+
+  .header-badge {
+    font-size: 11px;
+  }
+
+  .dashboard {
+    width: 94%;
+    padding-top: 24px;
+  }
+
+  .panel {
+    padding: 16px;
+    border-radius: 12px;
+  }
+
+  .map-container {
+    height: 380px;
+  }
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.stat-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+  background: #ffffff;
+  border: 1px solid #e4ebe5;
+  border-radius: 14px;
+}
+
+.stat-label {
+  color: #68766c;
+  font-size: 13px;
+}
+
+.stat-card strong {
+  color: #176b3a;
+  font-size: 30px;
+}

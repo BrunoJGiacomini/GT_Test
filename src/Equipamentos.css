@@ -1,0 +1,260 @@
+/* Indicadores: agora são cinco cartões */
+.equipment-summary {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.summary-item {
+  min-width: 0;
+  padding: 16px;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  background: #ffffff;
+}
+
+.summary-label {
+  display: block;
+  margin-bottom: 8px;
+  color: #64748b;
+  font-size: 0.82rem;
+}
+
+.summary-item strong {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.summary-green {
+  color: #15803d;
+}
+
+.summary-blue {
+  color: #2563eb;
+}
+
+.summary-orange {
+  color: #c2410c;
+}
+
+.summary-red {
+  color: #dc2626;
+}
+
+/* Cartão de cada equipamento */
+.equipment-card {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 20px;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  background: #ffffff;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.equipment-card:hover {
+  border-color: #cbd5e1;
+  box-shadow: 0 5px 18px rgb(15 23 42 / 6%);
+}
+
+.equipment-info {
+  flex: 1 1 160px;
+  min-width: 0;
+}
+
+.equipment-info h3 {
+  margin: 0 0 5px;
+  color: #0f172a;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.equipment-info p {
+  margin: 0 0 7px;
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
+.equipment-area {
+  color: #64748b;
+  font-size: 0.8rem;
+}
+
+/* Etiquetas de status */
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  flex-shrink: 0;
+  padding: 7px 11px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.status-dot {
+  width: 7px;
+  height: 7px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.status-disponivel {
+  color: #15803d;
+  background: #f0fdf4;
+  border-color: #bbf7d0;
+}
+
+.status-em_uso {
+  color: #1d4ed8;
+  background: #eff6ff;
+  border-color: #bfdbfe;
+}
+
+.status-manutencao {
+  color: #c2410c;
+  background: #fff7ed;
+  border-color: #fed7aa;
+}
+
+.status-quebrado {
+  color: #b91c1c;
+  background: #fef2f2;
+  border-color: #fecaca;
+}
+
+/* Área de ações */
+.equipment-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding-top: 12px;
+  border-top: 1px solid #f1f5f9;
+}
+
+.equipment-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 38px;
+  padding: 9px 13px;
+  border: 1px solid transparent;
+  border-radius: 9px;
+  font-family: inherit;
+  font-size: 0.82rem;
+  font-weight: 650;
+  line-height: 1.2;
+  cursor: pointer;
+  transition:
+    background-color 0.18s ease,
+    border-color 0.18s ease,
+    color 0.18s ease,
+    transform 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.equipment-action:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 3px 8px rgb(15 23 42 / 10%);
+}
+
+.equipment-action:focus-visible {
+  outline: 3px solid #93c5fd;
+  outline-offset: 2px;
+}
+
+.equipment-action:disabled {
+  cursor: wait;
+  opacity: 0.55;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Colocar em uso */
+.action-primary {
+  color: #ffffff;
+  background: #2563eb;
+  border-color: #2563eb;
+}
+
+.action-primary:hover:not(:disabled) {
+  background: #1d4ed8;
+}
+
+/* Liberar ou confirmar reparo */
+.action-success {
+  color: #166534;
+  background: #f0fdf4;
+  border-color: #bbf7d0;
+}
+
+.action-success:hover:not(:disabled) {
+  background: #dcfce7;
+  border-color: #86efac;
+}
+
+/* Enviar para manutenção */
+.action-maintenance {
+  color: #9a3412;
+  background: #fff7ed;
+  border-color: #fed7aa;
+}
+
+.action-maintenance:hover:not(:disabled) {
+  background: #ffedd5;
+  border-color: #fdba74;
+}
+
+/* Marcar como quebrado */
+.action-danger {
+  color: #b91c1c;
+  background: #fef2f2;
+  border-color: #fecaca;
+}
+
+.action-danger:hover:not(:disabled) {
+  background: #fee2e2;
+  border-color: #fca5a5;
+}
+
+/* Telas menores */
+@media (max-width: 900px) {
+  .equipment-summary {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .equipment-summary {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .equipment-card {
+    gap: 12px;
+    padding: 15px;
+  }
+
+  .equipment-actions {
+    gap: 8px;
+  }
+
+  .equipment-action {
+    flex: 1 1 140px;
+  }
+
+  .status-badge {
+    white-space: normal;
+  }
+}
